@@ -80,6 +80,14 @@ int main(void)
             }
             break;
         case 5:
+            //testをcsvに書き込み
+            fp = fopen("data.csv", "w");
+            for (i = 0; i < nx; i++)
+            {
+                fprintf(fp, "%s %d %d %d\n", test[i].date, test[i].today, test[i].total, test[i].total_die);
+            }
+            fclose(fp);
+            
             exit(1);
         default:
             printf("********* 値が無効です *********\n");
